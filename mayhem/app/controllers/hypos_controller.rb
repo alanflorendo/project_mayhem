@@ -1,0 +1,2 @@
+class HyposController < ApplicationController
+end
