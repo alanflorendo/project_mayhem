@@ -35,7 +35,7 @@ describe HyposController do
 
     context "show" do
       before do
-        get :show, :id=> hypoo.id
+        get :show, :id=> hypo.id
       end
 
       it "assigns the hypo to a variable" do
@@ -62,7 +62,7 @@ describe HyposController do
 
       context "an invalid hypo" do
         before do
-          post :create, :hypoo=> { :title=> ""}
+          post :create, :hypo=> { :title=> ""}
         end
 
         it "returns an error" do
