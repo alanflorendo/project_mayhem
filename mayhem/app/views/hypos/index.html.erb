@@ -1,0 +1,10 @@
+<h3>GodsLaw Hypos</h3>
+<div class="hypolist">
+  <% @hypos.each do |h| %>
+
+    <p>
+    	<%= h.title %>:  <%= h.sponsor_name %>
+    </p>
+
+  <% end %>
+<div>
