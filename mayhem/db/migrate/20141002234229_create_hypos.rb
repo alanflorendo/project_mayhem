@@ -13,6 +13,8 @@ class CreateHypos < ActiveRecord::Migration
     	t.boolean :is_flood
     	t.integer :vote_count
 
+        t.integer :user_id
+
       t.timestamps
     end
   end
