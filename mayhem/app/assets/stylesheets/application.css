@@ -2,3 +2,8 @@ nav li {
 	display: inline-block;
 	list-style: none;
 }
+
+nav a { 
+	text-decoration: none;
+	color: green;
+}
