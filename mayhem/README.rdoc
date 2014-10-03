@@ -6,3 +6,5 @@
 
 ### POTENTIAL ERRORS/ISSUES
 *What routes are there?  Did you add any?
+*skipped commit ("reset css") from 8/29 1:48 pm EDT)
+*skipped commit ("reset css") from 8/29 1:57 pm EDT)
