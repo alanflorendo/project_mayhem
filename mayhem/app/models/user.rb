@@ -7,8 +7,9 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password, message: "Password doesn't match"
 
   has_many :hypos
-
-  has_many :votes
+  has_many :votes, as: :voteable, through: :hypos
+  has_many :comments, through: :hypos
+  has_many :votes, as: :voteable, through: :comments
 
   has_secure_password
 
