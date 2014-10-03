@@ -1,6 +1,7 @@
 class CreateHypos < ActiveRecord::Migration
   def change
     create_table :hypos do |t|
+    	t.string :title
     	t.string :law_name
     	t.date :law_sponsor_date
     	t.string :sponsor_name
