@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141002234240) do
+ActiveRecord::Schema.define(version: 20141003222257) do
 
   create_table "comments", force: true do |t|
     t.string   "text"
@@ -35,6 +35,11 @@ ActiveRecord::Schema.define(version: 20141002234240) do
     t.boolean  "is_flood"
     t.integer  "vote_count"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sessions", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
