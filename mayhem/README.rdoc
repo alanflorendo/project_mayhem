@@ -1,4 +1,8 @@
 == README
 
 ### THINGS TO CONSIDER
-Adding SASS (maybe after a successful heroku deployment)
+*Adding SASS (maybe after a successful heroku deployment)
+
+
+### POTENTIAL ERRORS/ISSUES
+*What routes are there?  Did you add any?
