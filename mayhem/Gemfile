@@ -43,8 +43,9 @@ gem 'simplecov'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
-  gem 'capybara'
+  gem 'capybara', '~> 2.4.3'
   gem 'shoulda-matchers'
   gem 'rspec-support'
+  gem 'factory_girl_rails'
 end
 
