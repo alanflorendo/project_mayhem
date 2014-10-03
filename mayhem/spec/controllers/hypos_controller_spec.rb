@@ -5,7 +5,7 @@ describe HyposController do
   describe HyposController do
     let!(:hypo){ Hypo.create(title: "This rep got what he deserved!", 
       law_name: "No shopping on Sundays", 
-      law_sponsor_date: 2011-09-23, 
+      #law_sponsor_date: "2011-09-23", 
       sponsor_name: "Senator Kris Jenner", 
       sponsor_city: "Los Angeles", 
       sponsor_state: "CA", 
