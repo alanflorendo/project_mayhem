@@ -19,7 +19,7 @@ describe UsersController do
 
 		it "redirects to hypos" do 
 			post :create, user: FactoryGirl.attributes_for(:user)
-			expect(response).to redirect_to hypos_path(assigns[:user])
+			expect(response).to redirect_to hypos_path
 		end
 	end
 end
