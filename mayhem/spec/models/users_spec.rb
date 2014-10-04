@@ -1,37 +1,68 @@
 require 'rails_helper'
 
 describe User do
-  it {should have_many(:photos)}
-  it {should validate_presence_of(:email)}
-  it {should validate_presence_of(:username)}
-  it {should validate_presence_of(:password)}
-  it {should validate_uniqueness_of(:email)}
-  it {should validate_uniqueness_of(:username)}
-  it {should have_secure_password }
+  let!(:user) { User.create(email:"alan@gmail.com", password:"alan") }
 
-  let!(:user) { User.create(email:"alan@gmail.com", username: "alan", password:"alan") }
-	context "email" do 
-		it "should return valid email" do  
-			expect(user.email).to eq("alan@gmail.com")
-		end
-	end
+  context "email" do
+    it "should return valid email" do
+      expect(user.email).to eq("alan@gmail.com")
+    end
+  end
+  context "password" do
+    it "should return the password" do
+      expect(user.password).to eq("alan")
+    end
+  end
 
-	context "invalid email" do 
-		it "user is invalid without email" do 
-			expect { User.new(email: nil, username: "alan", password:"alan") }.to raise_error(ArgumentError)
-		end
-	end
+  context "validates unique email" do
+    it { should validate_uniqueness_of(:email) }
+  end
 
-	context "invalid params" do 
-		it "user is invalid without password" do 
-			expect { User.new(email:"alan@gmail.com", username: "alan", password: nil) }.to raise_error(ArgumentError)
-		end
-	end
+  context "validates presence of email" do
+    it { should validate_presence_of(:email) }
+  end
 
-	context "invalid params" do 
-		it "user is invalid without username" do 
-			expect { User.new(email:"alan@gmail.com", username: nil, password:"alan") }.to raise_error(ArgumentError)
-		end
-	end
+  context "validates presence of password" do
+    it { should validate_presence_of(:password) }
+  end
 
+  context "validates confirmation of password" do
+    it { should validate_confirmation_of(:password) }
+  end
+
+  context "validates has_secure_password" do
+    it { should have_secure_password }
+  end
+
+  context "invalid params" do
+    it "user is invalid without email" do
+      expect { User.new(:user, email: nil) }.to raise_error(ArgumentError)
+    end
+  end
+
+  context "invalid params" do
+    it "user is invalid without password" do
+      expect { User.new(:user, password: nil) }.to raise_error(ArgumentError)
+    end
+  end
+
+  context "user has many photos" do
+    it { should have_many(:photos) }
+  end
+
+  context "user has many votes" do
+    it { should have_many(:votes) }
+  end
 end
+
+
+
+
+
+
+
+
+
+
+
+
