@@ -18,13 +18,19 @@ describe User do
 
 	context "invalid email" do 
 		it "user is invalid without email" do 
-			expect { User.new(:user, email: nil) }.to raise_error(ArgumentError)
+			expect { User.new(email: nil, username: "alan", password:"alan") }.to raise_error(ArgumentError)
 		end
 	end
 
 	context "invalid params" do 
 		it "user is invalid without password" do 
-			expect { User.new(:user, password: nil) }.to raise_error(ArgumentError)
+			expect { User.new(email:"alan@gmail.com", username: "alan", password: nil) }.to raise_error(ArgumentError)
+		end
+	end
+
+	context "invalid params" do 
+		it "user is invalid without username" do 
+			expect { User.new(email:"alan@gmail.com", username: nil, password:"alan") }.to raise_error(ArgumentError)
 		end
 	end
 
