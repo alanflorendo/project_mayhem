@@ -18,11 +18,11 @@
   <%= link_to "Back to Hypos", root_url %><br><br><br>
 
   <h3>Comments</h3>
-
-  <%= render partial: "comments/index", object: @hypo.comments %>
-
   <% if current_user %>
     <%= render partial: "comments/new" %>
-  <% end %>
+  <% end %><br><br><br><br>
+
+
+  <%= render partial: "comments/index", object: @hypo.comments %>
 
 </div>
