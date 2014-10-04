@@ -3,7 +3,9 @@
   <% @hypos.each do |h| %>
 
     <p>
-    	<%= h.title %>:  <%= h.sponsor_name %>
+    	<a href=hypos/<%= h.id %> >
+    		<%= h.title %>:  <%= h.sponsor_name %>
+    	</a>
     </p>
 
   <% end %>
