@@ -22,4 +22,10 @@ describe User do
 		end
 	end
 
+	context "invalid params" do 
+		it "user is invalid without password" do 
+			expect { User.new(:user, password: nil) }.to raise_error(ArgumentError)
+		end
+	end
+
 end
