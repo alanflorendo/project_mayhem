@@ -1,5 +1,5 @@
 <%= form_for [@hypo, Comment.new] do |f| %>
   <%= f.label :comment, "Add Comment" %>
-  <%= f.text_area :text %>
-  <%= f.submit %>
+  <%= f.text_area :text, placeholder: "comment..." %>
+  <%= f.submit "Submit" %>
 <% end %>
