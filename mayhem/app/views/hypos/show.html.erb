@@ -13,88 +13,16 @@
     <% end %>
 
 
-<table>
-
-  <tr>
-    <td class="form_label"> username </td>
-    <td class="form_answer"> <%= @hypo.user.username %> </td>
-  </tr>
-
-  <tr>
-    <td class="form_label"> vote_count </td>
-    <td class="form_answer"> <%= @hypo.vote_count %> </td>
-  </tr>
-
-  <tr>
-    <td class="form_label"> title </td>
-    <td class="form_answer"> <%= @hypo.title %> </td>
-  </tr>
-
-  <tr>
-    <td class="form_label"> law_name </td>
-    <td class="form_answer"> <%= @hypo.law_name %> </td>
-  </tr>
-
-  <tr>
-    <td class="form_label"> law_sponsor_date </td>
-    <td class="form_answer"> <%= @hypo.law_sponsor_date %> </td>
-  </tr>
-
-  <tr>
-    <td class="form_label"> sponsor_name </td>
-    <td class="form_answer"> <%= @hypo.sponsor_name %> </td>
-  </tr>
-
-  <tr>
-    <td class="form_label"> sponsor_city </td>
-    <td class="form_answer"> <%= @hypo.sponsor_city %> </td>
-  </tr>
-
-  <tr>
-    <td class="form_label"> sponsor_state </td>
-    <td class="form_answer"> <%= @hypo.sponsor_state %> </td>
-  </tr>
-
-  <tr>
-    <td class="form_label"> precip_amount </td>
-    <td class="form_answer"> <%= @hypo.precip_amount %> </td>
-  </tr>
-
-  <tr>
-    <td class="form_label"> is_tornado </td>
-    <td class="form_answer"> <%= @hypo.is_tornado %> </td>
-  </tr>
-
-  <tr>
-    <td class="form_label"> is_hurricane </td>
-    <td class="form_answer"> <%= @hypo.is_hurricane %> </td>
-  </tr>
-
-  <tr>
-    <td class="form_label"> is_flood </td>
-    <td class="form_answer"> <%= @hypo.is_flood %> </td>
-  </tr>
-
-
-  </table><br><br>
+  <%= render partial: "detail" %>
 
   <%= link_to "Back to Hypos", root_url %><br><br><br>
 
   <h3>Comments</h3>
 
-    <% @hypo.comments.each do |c| %>
-      <%= c.user.username %><br>
-      <% time = c.created_at.in_time_zone("Eastern Time (US & Canada)") %>
-      <%= time.strftime("%m/%d/%Y %I:%M%p") %><br>
-      <%= c.text %><br><br>
-    <% end %>
+  <%= render partial: "comments/index", object: @hypo.comments %>
 
-    <% if current_user %>
-     <%= form_for [@hypo, Comment.new] do |f| %>
-      <%= f.label :comment, "Add Comment" %>
-      <%= f.text_area :text %>
-      <%= f.submit %>
-      <% end %>
-<% end %>
+  <% if current_user %>
+    <%= render partial: "comments/new" %>
+  <% end %>
 
 </div>
