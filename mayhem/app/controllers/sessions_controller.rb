@@ -8,13 +8,13 @@ class SessionsController < ApplicationController
 			render 'new'
 		else
 			session[:user_id] = user.id
-			redirect_to photos_path
+			redirect_to hypos_path
 		end
 	end
 
 	def destroy
 		session[:user_id] = nil
-		redirect_to photos_path
+		redirect_to hypos_path
 	end
 
 end
