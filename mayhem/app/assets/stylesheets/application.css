@@ -23,3 +23,9 @@ nav a {
 .form_answer {
   font-size: 1.25em;
 }
+
+.comment {
+  background-color: yellow;
+  margin: 1% 0;
+  border: 1px dotted silver;
+}
