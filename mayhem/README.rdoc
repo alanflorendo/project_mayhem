@@ -10,4 +10,4 @@
 *skipped commit ("reset css") from 8/29 1:57 pm EDT)
 
 
-LEFT OFF AT STCR "MERGE PULL REQ #8" 8/29 3:44 pm EDT"
+THIS IS A WORKING APP
