@@ -16,4 +16,10 @@ describe User do
 		end
 	end
 
+	context "invalid email" do 
+		it "user is invalid without email" do 
+			expect { User.new(:user, email: nil) }.to raise_error(ArgumentError)
+		end
+	end
+
 end
