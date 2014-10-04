@@ -8,3 +8,6 @@
 *What routes are there?  Did you add any?
 *skipped commit ("reset css") from 8/29 1:48 pm EDT)
 *skipped commit ("reset css") from 8/29 1:57 pm EDT)
+
+
+LEFT OFF AT STCR "MERGE PULL REQ #8" 8/29 3:44 pm EDT"
