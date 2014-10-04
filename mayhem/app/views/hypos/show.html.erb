@@ -10,6 +10,11 @@
   </tr>
 
   <tr>
+    <td class="form_label"> vote_count </td>
+    <td class="form_answer"> <%= @hypo.vote_count %> </td>
+  </tr>
+
+  <tr>
     <td class="form_label"> title </td>
     <td class="form_answer"> <%= @hypo.title %> </td>
   </tr>
@@ -60,6 +65,8 @@
   </tr>
 
 
-  </table>
+  </table><br><br>
+
+  <%= link_to "Back to Hypos", root_url %>
 
 </div>
