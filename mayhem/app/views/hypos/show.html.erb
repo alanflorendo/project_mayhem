@@ -2,6 +2,17 @@
 
 
 <br>
+
+    <% if current_user %>
+         <%= form_for [@hypo, Vote.new] do |f| %>
+          <%= f.label "#{@hypo.vote_count} votes" %> <br>
+          <br>
+          <%= f.submit "Like"%> <br>
+          <br>
+          <% end %>
+    <% end %>
+
+
 <table>
 
   <tr>

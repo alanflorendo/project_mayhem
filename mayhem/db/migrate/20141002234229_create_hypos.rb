@@ -11,7 +11,7 @@ class CreateHypos < ActiveRecord::Migration
     	t.boolean :is_tornado
     	t.boolean :is_hurricane
     	t.boolean :is_flood
-    	t.integer :vote_count
+    	t.integer :vote_count, default: 0
 
         t.integer :user_id
 

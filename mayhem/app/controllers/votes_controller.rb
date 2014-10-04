@@ -1,14 +1,36 @@
 class VotesController < ApplicationController
 
   def create
-    @hypos = Hypo.all
-    hypo = Hypo.find(params[:hypo_id])
-    vote = hypo.votes.new(user_id: session[:user_id], votable_id: hypo.id, votable_type: "Hypo", value: 1)
-    if vote.save
-      render 'hypos/index' and return
+    @context = context_obj
+    @vote = Vote.new(user_id: current_user.id, voteable_id: @context.id, voteable_type: context_type)
+    if current_user.already_voted_this?(@context, context_type)
+      redirect_to context_path
     else
-      render 'hypos/index' and return
+      @vote.save
+      @context.update(vote_count: @context.vote_count + 1)
+      redirect_to context_path
     end
+  end
+
+  private
+  def vote_params
+    params.require(:vote).permit(:user_id, :voteable_id)
+  end
+
+  def voteable_is_comment?
+    params[:comment_id] ? true : false
+  end
+
+  def context_obj
+    voteable_is_comment? ? Comment.find(params[:comment_id]) : Hypo.find(params[:hypo_id])
+  end
+
+  def context_type
+    voteable_is_comment? ? "Comment" : "Hypo"
+  end
+
+  def context_path
+      voteable_is_comment? ? hypo_path(context_obj.hypo) : hypo_path(context_obj)
   end
 
 end

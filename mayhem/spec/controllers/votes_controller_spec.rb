@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe VotesController, :type => :controller do
 
-  let!(:vote){ Vote.create!(value: 0, user: User.first, votable: Hypo.first) }
+  let!(:vote){ Vote.create!(value: 0, user: User.first, voteable: Hypo.first) }
 
     context "routing" do
       it "routes / to votes#index" do
@@ -40,7 +40,7 @@ RSpec.describe VotesController, :type => :controller do
     context "create" do
       context "with a valid vote" do
         before do
-          post :create, :vote => { value: 0, user: User.first, votable: Hypo.first}
+          post :create, :vote => { value: 0, user: User.first, voteable: Hypo.first}
         end
         it "creates a new valid vote" do
           expect(Vote.last.value).to eq(0)

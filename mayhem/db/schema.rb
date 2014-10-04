@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20141003222257) do
     t.boolean  "is_tornado"
     t.boolean  "is_hurricane"
     t.boolean  "is_flood"
-    t.integer  "vote_count"
+    t.integer  "vote_count",       default: 0
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(version: 20141003222257) do
 
   create_table "votes", force: true do |t|
     t.integer  "user_id"
-    t.integer  "votable_id"
-    t.string   "votable_type"
+    t.integer  "voteable_id"
+    t.string   "voteable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
