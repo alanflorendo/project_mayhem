@@ -24,8 +24,98 @@ nav a {
   font-size: 1.25em;
 }
 
+
+
+
+*******************************************************
+*******************************************************
+**               FORMAT HYPO/SHOW VIEW               **
+*******************************************************
+
+#hypo_title {
+
+}
+
+#hypo_votes {
+  background-color:salmon;
+  display: inline-block;
+  width: 600px;
+  text-align: center;
+  padding: 0.6%;
+  margin-bottom: 2%;
+}
+
+#hypo_info_table td {
+  border: 1px solid grey;
+}
+
+#hypo_info_table {
+  background: lightgreen;
+  width: 600px;
+}
+
+#back_to_hypos_index {
+  text-align: center;
+  background: orange;
+  width: 600px;
+}
+
 .comment {
   background-color: yellow;
+  width: 600px;
   margin: 1% 0;
   border: 1px dotted silver;
+}
+
+#new_comment {
+  width: 600px;
+  background: thistle;
+  padding: 0.5%;
+}
+
+#new_comment textarea {
+  width: 400px;
+  height: 60px;
+}
+
+#comment_credentials {
+  display: block;
+  background-color: gold;
+  border: 2px solid black;
+  height: 50px;
+  padding: 0.5%;
+}
+
+#comment_label {
+  float: left;
+  font-size: 0.8em;
+  color: gray;
+  font-family: arial;
+}
+
+#comment_votes {
+  float: right;
+  font-family: arial;
+}
+
+#comment_username {
+  clear: left;
+  float: left;
+  font-family: arial;
+}
+
+#like_button {
+  float: right;
+}
+
+#comment_text {
+  line-height: 0;
+  font-family: arial;
+}
+
+#comment_time {
+  font-family: arial;
+  line-height: 0;
+  color: gray;
+  font-size: 0.8em;
 }

@@ -2,19 +2,22 @@
 <% @hypo.comments.order("vote_count DESC").each do |c| %>
 <div class="comment">
   <% c_votes = c.vote_count == nil ? 0 : c.vote_count %>
-  <%= "#{c.user.username}: (#{c_votes})" %>
-  <p>comment_id:  <%=c.id%></p>
+
+  <div id="comment_credentials">
+    <span id="comment_label">COMMENT</span>
+    <span id="comment_votes"><%= c_votes %></span>
+    <span id="comment_username"><%= c.user.username %></span>
 
     <% if current_user %>
-      <%= c.id %>
       <%= form_tag("/hypos/#{@hypo.id}/comments/#{c.id}/votes", method: "post") do %>
-        <%= submit_tag("Like") %><br><br>
+        <br><span id="like_button"><%= submit_tag("Like") %></span><br><br>
         <% end %>
     <% end %>
+  </div>
 
   <% time = c.created_at.in_time_zone("Eastern Time (US & Canada)") %>
-  <%= time.strftime("%m/%d/%Y %I:%M%p") %><br>
-  <%= c.text %><br><br>
+  <p id="comment_text"><%= c.text %></p>
+  <p id="comment_time"><%= time.strftime("%m/%d/%Y %I:%M%p") %></p><br>
 </div>
 <% end %>
 
