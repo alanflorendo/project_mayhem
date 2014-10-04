@@ -2,63 +2,64 @@
 
 
 <br>
-<%= form_for :hypo, url: {action: "create"} do |f| %>
+<table>
 
-  <p>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </p>
+  <tr>
+    <td class="form_label"> username </td>
+    <td class="form_answer"> <%= @hypo.user.username %> </td>
+  </tr>
 
-  <p>
-    <%= f.label :law_name %>
-    <%= f.text_field :law_name %>
-  </p>
+  <tr>
+    <td class="form_label"> title </td>
+    <td class="form_answer"> <%= @hypo.title %> </td>
+  </tr>
 
-  <p>
-    <%= f.label :law_sponsor_date %>
-    <%= f.text_field :law_sponsor_date %>
-  </p>
+  <tr>
+    <td class="form_label"> law_name </td>
+    <td class="form_answer"> <%= @hypo.law_name %> </td>
+  </tr>
 
-  <p>
-    <%= f.label :sponsor_name %>
-    <%= f.text_field :sponsor_name %>
-  </p>
+  <tr>
+    <td class="form_label"> law_sponsor_date </td>
+    <td class="form_answer"> <%= @hypo.law_sponsor_date %> </td>
+  </tr>
 
-  <p>
-    <%= f.label :sponsor_city %>
-    <%= f.text_field :sponsor_city %>
-  </p>
+  <tr>
+    <td class="form_label"> sponsor_name </td>
+    <td class="form_answer"> <%= @hypo.sponsor_name %> </td>
+  </tr>
 
-  <p>
-    <%= f.label :sponsor_state %>
-    <%= f.text_field :sponsor_state %>
-  </p>
+  <tr>
+    <td class="form_label"> sponsor_city </td>
+    <td class="form_answer"> <%= @hypo.sponsor_city %> </td>
+  </tr>
 
-  <p>
-    <%= f.label :precip_amount %>
-    <%= f.text_field :precip_amount %>
-  </p>
+  <tr>
+    <td class="form_label"> sponsor_state </td>
+    <td class="form_answer"> <%= @hypo.sponsor_state %> </td>
+  </tr>
 
-  <p>
-    <%= f.label :is_tornado %>
-    <%= f.text_field :is_tornado %>
-  </p>
+  <tr>
+    <td class="form_label"> precip_amount </td>
+    <td class="form_answer"> <%= @hypo.precip_amount %> </td>
+  </tr>
 
-  <p>
-    <%= f.label :is_hurricane %>
-    <%= f.text_field :is_hurricane %>
-  </p>
+  <tr>
+    <td class="form_label"> is_tornado </td>
+    <td class="form_answer"> <%= @hypo.is_tornado %> </td>
+  </tr>
 
-  <p>
-    <%= f.label :is_flood %>
-    <%= f.text_field :is_flood %>
-  </p>
+  <tr>
+    <td class="form_label"> is_hurricane </td>
+    <td class="form_answer"> <%= @hypo.is_hurricane %> </td>
+  </tr>
 
-  <%= f.hidden_field :user_id, :value => current_user.id%>
+  <tr>
+    <td class="form_label"> is_flood </td>
+    <td class="form_answer"> <%= @hypo.is_flood %> </td>
+  </tr>
 
-  <p>
-    <%= f.submit value:"Create new hypo" %>
-  </p>
-  <% end %>
+
+  </table>
 
 </div>
