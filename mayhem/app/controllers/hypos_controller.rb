@@ -1,7 +1,7 @@
 class HyposController < ApplicationController
 
 	def index
-		@hypos = Hypo.all
+		@hypos = Hypo.all.order("vote_count DESC")
 	end
 
 	def new
