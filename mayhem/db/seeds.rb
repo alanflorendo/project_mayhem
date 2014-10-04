@@ -23,3 +23,10 @@ User.all.each do |user|
                               vote_count: rand(500))
   end
 end
+
+User.all.each do |user|
+  10.times do
+    h = Hypo.all.sample
+    Comment.create(user_id: user.id, hypo_id: h.id, text: Faker::Lorem.sentence, vote_count: rand(35))
+  end
+end
