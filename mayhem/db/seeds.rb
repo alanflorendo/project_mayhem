@@ -19,6 +19,7 @@ User.all.each do |user|
                               precip_amount: precips[rand(precips.length-1)],
                               is_tornado: tornado,
                               is_hurricane: hurricane,
-                              is_flood: flood)
+                              is_flood: flood,
+                              vote_count: rand(500))
   end
 end
