@@ -7,6 +7,7 @@ describe User do
   it {should validate_presence_of(:password)}
   it {should validate_uniqueness_of(:email)}
   it {should validate_uniqueness_of(:username)}
+  it {should have_secure_password }
 
   let!(:user) { User.create(email:"alan@gmail.com", username: "alan", password:"alan") }
 	context "email" do 
