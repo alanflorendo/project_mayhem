@@ -1,7 +1,15 @@
 <h1> Create a new hypo</h1>
 
 
-<br>
+<%= select_tag :state, options_for_select(us_states) %>
+
+
+
+
+<br><br><br><br><br><br><br><br>
+=====
+RAW DATA
+=====
 <%= form_for :hypo, url: {action: "create"} do |f| %>
 
   <p>
